@@ -1,0 +1,215 @@
+Script started on Tue Jul  7 17:19:33 2020
+[?1034hbash-3.2$ mkdir japigit
+bash-3.2$ cd japigit
+bash-3.2$ git init
+Initialized empty Git repository in /Users/nicolequeen/japigit/.git/
+bash-3.2$ git config --global usern[K.name "Hailey Queen"
+bash-3.2$ git config --global user.n[Kemail hnqueen@asu.edu
+bash-3.2$ japi.p[K[K[K[K[K[Kgit add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+bash-3.2$ git add .
+bash-3.2$ git commit -m "module 5"
+On branch master
+
+Initial commit
+
+nothing to commit
+bash-3.2$ git commit -am "m[Kpython project 5"
+On branch master
+
+Initial commit
+
+nothing to commit
+bash-3.2$ git status
+On branch master
+
+Initial commit
+
+nothing to commit (create/copy files and use "git add" to track)
+bash-3.2$ git status -s
+bash-3.2$ echo "hellow[K there" > hello.txt
+bash-3.2$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	[31mhello.txt[m
+
+nothing added to commit but untracked files present (use "git add" to track)
+bash-3.2$ git status -s
+[31m??[m hello.txt
+bash-3.2$ git add .[K[K[K[K[K[K[Kt add hello.txt
+bash-3.2$ git status -s
+[32mA[m  hello.txt
+bash-3.2$ echo "We are testing git status" >> hello.txt
+bash-3.2$ git status
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	[32mnew file:   hello.txt[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   hello.txt[m
+
+bash-3.2$ git diff
+[?1h=[1mdiff --git a/hello.txt b/hello.txt[m[m
+[1mindex c7c7da3..0fffb77 100644[m[m
+[1m--- a/hello.txt[m[m
+[1m+++ b/hello.txt[m[m
+[36m@@ -1 +1,2 @@[m[m
+ hello there[m[m
+[32m+[m[32mWe are testing git status[m[m
+[K[?1l>bash-3.2$ git commit -m "comment'[K"
+[master (root-commit) 91ccff1] comment
+ 1 file changed, 1 insertion(+)
+ create mode 100644 hello.txt
+bash-3.2$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	[31mmodified:   hello.txt[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ git add .
+bash-3.2$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mmodified:   hello.txt[m
+
+bash-3.2$ git log
+[?1h=[33mcommit 91ccff136f20f3931e5e1db33bfcfea6adda32f5[m[m
+Author: Hailey Queen <hnqueen@asu.edu>[m
+Date:   Tue Jul 7 17:24:34 2020 -0600[m
+[m
+    comment[m
+[K[?1l>bash-3.2$ git status s[K-s
+[32mM[m  hello.txt
+bash-3.2$ git log -oneline
+fatal: unrecognized argument: -oneline
+bash-3.2$ git branch
+* [32mmaster[m
+bash-3.2$ echo "master version" >> hello.txt
+bash-3.2$ git comi[Kmit -am "M[Kmasterver[K[K[K version"
+[master 63f2fcd] master version
+ 1 file changed, 2 insertions(+)
+bash-3.2$ git branch feature
+bash-3.2$ git branch
+  feature[m
+* [32mmaster[m
+bash-3.2$ git checkout feature
+Switched to branch 'feature'
+bash-3.2$ git branch
+* [32mfeature[m
+  master[m
+bash-3.2$ echo "new file" > hellow[K [K_feature
+bash-3.2$ echo "feature version" >> hello.txt
+bash-3.2$ git add .
+bash-3.2$ git commit -m "feature version"
+[feature 3412539] feature version
+ 2 files changed, 2 insertions(+)
+ create mode 100644 hello_feature
+bash-3.2$ switch [K[K[K[K[K[K[Kgit checkout master
+Switched to branch 'master'
+bash-3.2$ git branch
+  feature[m
+* [32mmaster[m
+bash-3.2$ echo "init[K[K[K[KInii[Ktial content'[K" > merge.txt
+bash-3.2$ git add . 
+bash-3.2$ git commit -m "adding new file on master"
+[master c1ec70d] adding new file on master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 merge.txt
+bash-3.2$ git branch newbranch
+bash-3.2$ echo "Update on master" > merge.txt
+bash-3.2$ git add .
+bash-3.2$ commi[K[K[K[K[Kgit commit -m "update on master"
+[master 96cb4c4] update on master
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.2$ git checkout newba[Kranch
+Switched to branch 'newbranch'
+bash-3.2$ echo "Update on newbranch" > merge.txt
+bash-3.2$ git omm[K[K[Kcommit-am[K[K[K -am "update on newbranch"
+[newbranch 30b12f7] update on newbranch
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+bash-3.2$ git checkout master
+Switched to branch 'master'
+bash-3.2$ git merge newbranch
+Auto-merging merge.txt
+CONFLICT (content): Merge conflict in merge.txt
+Automatic merge failed; fix conflicts and then commit the result.
+bash-3.2$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+	[31mboth modified:   merge.txt[m
+
+no changes added to commit (use "git add" and/or "git commit -a")
+bash-3.2$ cat merge.txt
+<<<<<<< HEAD
+Update on master
+=======
+Update on newbranch
+>>>>>>> newbranch
+bash-3.2$ echo "merged version" > merge.txt
+bash-3.2$ git add . 
+bash-3.2$ git commit -m "Fixed conflit[Kcts"
+[master 0dd9869] Fixed conflicts
+bash-3.2$ git status
+On branch master
+nothing to commit, working directory clean
+bash-3.2$ git branch -d newbranch
+Deleted branch newbranch (was 30b12f7).
+bash-3.2$ echo "file to delete" > to_delt[Kete.txt
+bash-3.2$ git add.[K . 
+bash-3.2$ git commit -m "yet another lab file"
+[master 9369ce8] yet another lab file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 to_delete.txt
+bash-3.2$ git rm to_delete.txt
+rm 'to_delete.txt'
+bash-3.2$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	[32mdeleted:    to_delete.txt[m
+
+bash-3.2$ ls
+hello.txt	merge.txt
+bash-3.2$ git reset --hard HEAD
+HEAD is now at 9369ce8 yet another lab file
+bash-3.2$ git status
+On branch master
+nothing to commit, working directory clean
+bash-3.2$ ls
+hello.txt	merge.txt	to_delete.txt
+bash-3.2$ git rm to delete.txt
+fatal: pathspec 'to' did not match any files
+bash-3.2$ git status -sb #[K
+## [32mmaster[m
+bash-3.2$ commit -[K[K[K[K[K[K[K[Kgit commit -m "<file deletion>"
+On branch master
+nothing to commit, working directory clean
+bash-3.2$ exit
+exit
+
+Script done on Tue Jul  7 17:31:27 2020
